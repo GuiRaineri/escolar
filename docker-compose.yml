@@ -1,0 +1,12 @@
+services:
+  app:
+    # Constrói a imagem a partir do Dockerfile no diretório atual (.).
+    build: .
+    container_name: imersao
+   
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual do projeto dentro do contêiner no diretório /app.
+    # Isso sincroniza seus arquivos e garante que o banco de dados (escola.db) seja salvo no seu computador.
+    volumes:
+      - .:/app
